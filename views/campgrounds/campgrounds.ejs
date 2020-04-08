@@ -17,15 +17,17 @@
 
 <div class="campgrounds">
 
+  <% campgrounds.forEach(campground => { %>
 
   <div class="card" style="width: 18rem;">
-    <img src="https://images.unsplash.com/photo-1496535731694-9673400f50c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="card-img-top" alt="Campground Image">
+    <img src="<%= campground.image %>" class="card-img-top" alt="Campground Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title"><%= campground.name %></h5>
       <a href="#" class="btn btn-sm btn-outline-info">Take a look</a>
     </div>
   </div>
-
+  
+  <% }) %>
 
 </div>
 

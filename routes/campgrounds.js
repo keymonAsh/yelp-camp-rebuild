@@ -10,7 +10,13 @@ const Campground = require('../models/campgrounds')
 // Desc: Rendering All campgrounds
 // Route: /campgrounds
 router.get('/', (req, res) => {
-    res.render('campgrounds/campgrounds')
+    Campground.find({}, (err, campgrounds) => {
+        if(err) {
+            console.log(err)
+        } else {
+            res.render('campgrounds/campgrounds', { campgrounds: campgrounds })
+        }
+    })
 })
 
 // Desc: Rendering new from
@@ -19,10 +25,16 @@ router.get('/new', (req, res) => {
     res.render('campgrounds/new')
 })
 
-// Desc: Rendering new from
+// Desc: Creating campground
 // Route: /campgrounds/new
 router.post('/', (req, res) => {
-    res.redirect('/campgrounds')
+    Campground.create(req.body.campground, (err, campground) => {
+        if(err) {
+            console.log(err)
+        } else {
+            res.redirect('/campgrounds')
+        }
+    })
 })
 
 module.exports = router
