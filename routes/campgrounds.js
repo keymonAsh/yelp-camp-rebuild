@@ -37,4 +37,16 @@ router.post('/', (req, res) => {
     })
 })
 
+// Desc: Rendering Show campground page
+// Route: /campgrounds/:id
+router.get('/:id', (req, res) => {
+    Campground.findById(req.params.id, (err, campground) => {
+        if(err) {
+            console.log(err)
+        } else {
+            res.render('campgrounds/show', { campground: campground })
+        }
+    })
+})
+
 module.exports = router

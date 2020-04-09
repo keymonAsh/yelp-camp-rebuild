@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+<%- include('../partials/nav') %>
+
+<div class="container">
+
+<div class="row">
+<div class="col-md-3">
+  <ul class="list-group">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Morbi leo risus</li>
+    <li class="list-group-item">Porta ac consectetur ac</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
+</div>
+<div class="col-md-9">
+
+  <div class="card mb-3">
+    <img src="<%= campground.image %>" class="card-img-top" alt="campground image">
+    <div class="card-body">
+      <h5 class="card-title display-4 font-weight-bold"><%= campground.name %></h5>
+      <p class="card-text" id="description-content"><%= campground.description %></p>
+      <p class="card-text"><small class="text-muted"><%= campground.createdAt %></small> <span class="float-right"> <button class="btn btn-sm btn-outline-warning">Edit</button> <button class="btn btn-sm btn-outline-danger"> Delete </button> </span> </p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+</div>
+<!-- container end -->
+</div>
+
+<%- include('../partials/footer') %>
