@@ -6,6 +6,7 @@ const app = express()
 
 // middlewares
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 // Connecting to database
 const mongoose = require('mongoose')
@@ -21,6 +22,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(methodOverride("_method"))
 
 // ## ROUTES
 // Require routes

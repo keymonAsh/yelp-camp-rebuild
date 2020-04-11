@@ -20,7 +20,15 @@
     <div class="card-body">
       <h5 class="card-title display-4 font-weight-bold"><%= campground.name %></h5>
       <p class="card-text" id="description-content"><%= campground.description %></p>
-      <p class="card-text"><small class="text-muted"><%= campground.createdAt %></small> <span class="float-right"> <button class="btn btn-sm btn-outline-warning">Edit</button> <button class="btn btn-sm btn-outline-danger"> Delete </button> </span> </p>
+      <p class="card-text">
+
+        <small class="text-muted"><%= campground.createdAt %></small>
+        <span class="float-right">
+          <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" style="display: inline;" class="float-right"><button class="btn btn-sm btn-outline-danger">Delete</button></form>
+          <a href="/campgrounds/<%= campground._id %>/edit" class="float-right btn btn-sm btn-outline-warning" style="margin-right: 10px;">Edit</a>
+        </span> 
+
+      </p>
     </div>
   </div>
 
